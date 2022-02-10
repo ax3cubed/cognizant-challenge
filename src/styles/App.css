@@ -10,15 +10,7 @@
 }
 
 .App-header {
-  background-color: rgb(2, 150, 209);
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  padding-left: 85px;
-  color: white;
+  margin-bottom: 80px;
 }
 
 .App-link {
