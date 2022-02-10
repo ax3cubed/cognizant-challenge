@@ -1,11 +1,9 @@
-import "./App.css";
+import { Task } from "./components/task/task";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>COGNIZANT CHALLENGE</p>
-      </header>
+      <Task />
     </div>
   );
 }
