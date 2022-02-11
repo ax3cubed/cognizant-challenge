@@ -1,12 +1,23 @@
-import "./App.css";
+import Header from "./components/header/header";
+import Task from "./components/task/task";
+import Top3 from "./components/top3/top3";
+import "./styles/App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>COGNIZANT CHALLENGE</p>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className="App-header">
+          <Header></Header>
+        </div>
+
+        <Routes>
+          <Route path="/" element={<Task />}></Route>
+          <Route path="/top3" element={<Top3 />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
