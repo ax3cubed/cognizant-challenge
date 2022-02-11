@@ -1,11 +1,15 @@
 import { Card, CardContent, Grid } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import React, { useEffect } from "react";
+import { GET } from "../../apiService/apiCall";
+import { apiServices } from "../../apiService/apiConfig";
 
 const Top3 = (props) => {
   const [userTasks, setUserTasks] = React.useState([]);
 
   useEffect(() => {
+    let top3 = GET(apiServices.UserTask.getTop3UserTask);
+
     setUserTasks([
       { name: "John", totalSuccess: 10, totalTasks: 20, id: 1 },
       { name: "Danny", totalSuccess: 9, totalTasks: 20, id: 2 },
