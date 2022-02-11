@@ -12,13 +12,16 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { Component } from "react";
 import { Box } from "@mui/system";
-
+import { Link } from "react-router-dom";
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
   state = {
-    pages: ["SOLVE", "TOP3"],
+    pages: [
+      {
+        name: "SOLVE",
+        route: "/",
+      },
+      { name: "TOP3", route: "/top3" },
+    ],
     anchorNav: null,
   };
 
@@ -74,9 +77,9 @@ class Header extends Component {
                     display: { xs: "block", md: "none" },
                   }}
                 >
-                  {pages.map((page) => (
-                    <MenuItem key={page} onClick={this.handleCloseNavMenu}>
-                      <Typography textAlign="center">{page}</Typography>
+                  {pages.map((page, index) => (
+                    <MenuItem key={index} onClick={this.handleCloseNavMenu}>
+                      <Typography textAlign="center">{page.name}</Typography>
                     </MenuItem>
                   ))}
                 </Menu>
@@ -90,13 +93,16 @@ class Header extends Component {
                 COGNIZANT CHALLENGE
               </Typography>
               <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                {pages.map((page) => (
+                {pages.map((page, index) => (
                   <Button
-                    key={page}
+                    component={Link}
+                    to={page.route}
+                    key={index}
+                    variant="raised"
                     onClick={this.handleCloseNavMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
-                    {page}
+                    {page.name}
                   </Button>
                 ))}
               </Box>

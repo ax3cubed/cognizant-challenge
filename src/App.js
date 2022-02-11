@@ -1,7 +1,8 @@
 import Header from "./components/header/header";
 import Task from "./components/task/task";
+import Top3 from "./components/top3/top3";
 import "./styles/App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -11,7 +12,10 @@ function App() {
           <Header></Header>
         </div>
 
-        <Task />
+        <Routes>
+          <Route path="/" element={<Task />}></Route>
+          <Route path="/top3" element={<Top3 />}></Route>
+        </Routes>
       </div>
     </Router>
   );
