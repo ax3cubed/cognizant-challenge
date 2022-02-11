@@ -10,7 +10,7 @@ export const apiServices = {
     deleteTask: `${apiHost}/task/:id`, // DELETE
   },
   UserTask: {
-    getAllUserTask: `${apiHost}/userTask/:email`, // GET
+    getAllUserTask: `${apiHost}/userTask/byEmail/:email`, // GET
     getTop3UserTask: `${apiHost}/userTask/top3`, // GET
     postUserTask: `${apiHost}/userTask`, // POST
   },

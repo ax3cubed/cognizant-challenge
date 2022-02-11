@@ -5,7 +5,7 @@ export async function GET(url) {
   response = await axios
     .get(url)
     .then(function (response) {
-      return response.data.responseData;
+      return response.data;
     })
     .catch(function (error) {
       console.log(error);
@@ -18,7 +18,7 @@ export async function POST(url, request) {
   let response = await axios
     .post(url, request)
     .then(function (response) {
-      return response.data.responseData;
+      return response.data;
     })
     .catch(function (error) {
       console.log(error);
